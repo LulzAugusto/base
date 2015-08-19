@@ -1,2 +1,2 @@
 # Workshop AngularJS
-## GDG Maceió - 1 ano
+### GDG Maceió - 1 ano
