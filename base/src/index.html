@@ -5,7 +5,6 @@
     <meta content="width=device-width, initial-scale=1, minimal-ui" name="viewport">
 	<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
     <style>
     	body {
     		padding: 20% 25% 0 25%
@@ -15,9 +14,38 @@
 	<title>Workshop AngularJS</title>
 </head>
 
-<body>
+<body ng-app="app">
 
+	<main ng-controller="AppCtrl">
+		<input type="text" ng-model="userName">
+		<button type="button" ng-click="cadastrar()">Cadastrar</button>
+		<br><br>
 
+		Nomes cadastrados: {{ lista.length }}
+	</main>
+
+	<br><br><hr><br><br>
+
+	<div ng-controller="ListaCtrl">
+		<ul>
+			<li ng-repeat="nome in lista">
+				{{ nome }}
+			</li>
+		</ul>
+	</div>
+
+	<script src="libs/angular.js"></script>
+	<script src="app/app.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
