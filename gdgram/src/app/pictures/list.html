@@ -1,1 +1,18 @@
-<h1>TESTE</h1>
+<div class="mdl-card mdl-cell mdl-cell--4-col" ng-if="vm.pictures.length > 0" ng-repeat="picture in vm.pictures">
+    <div class="mdl-card__media mdl-color-text--grey-50">
+        <a href="#/view/{{ ::picture.id }}">
+    	   <img ng-src="{{ ::picture.images.low_resolution.url }}" alt="">
+        </a>
+    </div>
+
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <div class="minilogo">
+        	<img ng-src="{{ ::picture.user.profile_picture }}" alt="">
+        </div>
+
+        <div>
+            <strong>@{{ ::picture.user.username }}</strong>
+            <span>{{ vm.formatDate(picture.created_time) }}</span>
+        </div>
+    </div>
+</div>

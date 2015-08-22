@@ -51,6 +51,12 @@ body .demo-blog {
           align-items: stretch;
   min-height: 360px;
 }
+
+.demo-blog .mdl-card img {
+  width: 100%;
+  height: 100%;
+}
+
 .demo-blog .mdl-card__title {
   padding: 16px;
   -webkit-box-flex: 1;
@@ -61,7 +67,7 @@ body .demo-blog {
 .demo-blog .mdl-card__media {
   box-sizing: border-box;
   background-size: cover;
-  padding: 24px;
+  /*padding: 24px;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -495,6 +501,10 @@ body .demo-blog {
   background-size: 50%;
   border-radius: 22px;
   background-color: #F5F5F5;
+}
+
+.demo-blog .minilogo img {
+  border-radius: 50%;
 }
 
 /* Fixes for IE 10 */

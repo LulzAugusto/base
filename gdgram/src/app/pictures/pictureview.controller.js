@@ -3,21 +3,20 @@
 
     angular
         .module('app.pictures')
-        .controller('List', controller);
+        .controller('View', controller);
 
-    controller.$inject = ['Instagram'];
+    controller.$inject = ['$http', '$routeParams', 'Instagram'];
 
-    function controller(Instagram) {
+    function controller($http, $routeParams, Instagram) {
         /* jshint validthis:true */
         var vm = this;
 
         vm.formatDate = formatDate;
-        vm.pictures = [];
 
         activate();
 
         function activate() {
-            getPictures();
+            getPicture();
         }
 
         function formatDate(time) {
@@ -25,12 +24,12 @@
             return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
         }
 
-        function getPictures() {
-            return Instagram
-                .getRecentMediaForTag('bodyboarding')
-                .then(function(pictures) {
-                    vm.pictures = pictures;
-                    return pictures;
+        function getPicture() {
+            Instagram
+                .getMedia($routeParams.id)
+                .then(function(picture) {
+                    vm.picture = picture;
+                    return picture;
                 });
         }
     }

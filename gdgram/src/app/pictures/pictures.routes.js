@@ -12,7 +12,12 @@
                 .when('/', {
                     templateUrl: 'app/pictures/list.html',
                     controller: 'List',
-                    controllerAs: 'list'
+                    controllerAs: 'vm'
+                })
+                .when('/view/:id', {
+                    templateUrl: 'app/pictures/pictureview.html',
+                    controller: 'View',
+                    controllerAs: 'vm'
                 });
         }
 })();

@@ -1,0 +1,27 @@
+<div class="mdl-card amazing mdl-cell mdl-cell--12-col" ng-if="vm.picture">
+    <div class="mdl-card__title mdl-color-text--grey-50">
+        <img ng-src="{{ ::vm.picture.images.standard_resolution.url }}" alt="">
+    </div>
+
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <div class="minilogo">
+            <img ng-src="{{ ::vm.picture.user.profile_picture }}" alt="">
+        </div>
+
+        <div>
+            <strong>@{{ ::vm.picture.user.username }}</strong>
+            <span>{{ vm.formatDate(vm.picture.created_time) }}</span>
+            <span>{{ ::vm.picture.caption.text }}</span>
+        </div>
+    </div>
+
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600" ng-repeat="comment in vm.picture.comments.data">
+        <div class="minilogo">
+            <img ng-src="{{ ::comment.from.profile_picture }}" alt="">
+        </div>
+
+        <div>
+            <span>{{ ::comment.text }}</span>
+        </div>
+    </div>
+</div>
